@@ -4,7 +4,7 @@ using UnityEditor.Callbacks;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
-public class PlayerController : MonoBehaviour {
+public class Player : MonoBehaviour {
     private Rigidbody rb;
     private Vector3 velocity;
     public float playerSpeed = 8.0f;
@@ -12,21 +12,20 @@ public class PlayerController : MonoBehaviour {
     private Animator animator;
     private Vector3 move;
     private bool jump;
+    public Weapon weapon;
 
     private void Start() {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+
+        weapon.setOwner(gameObject);
     }
 
     void FixedUpdate() {
         // Makes the player jump
 
         if (jump && IsGrounded()) {
-            float gravity = Mathf.Abs(Physics.gravity.y); 
-            float jumpForce = rb.mass * (float) Math.Sqrt(2 * gravity * jumpHeight);
-            rb.AddForce(-Physics.gravity.normalized * jumpForce, ForceMode.Impulse);
-            jump = false;
-            animator.SetBool("isJumping", true);
+            Jump();
         } 
         
         rb.MovePosition(transform.position + move * Time.fixedDeltaTime * playerSpeed);
@@ -48,6 +47,22 @@ public class PlayerController : MonoBehaviour {
         } else if (rb.linearVelocity.y == 0 && animator.GetBool("isJumping")) {
             animator.SetBool("isJumping", false);
         }
+
+        if(Input.GetButtonDown("Fire1")) {
+            Attack();
+        }
+    }
+
+    void Jump() {
+        float gravity = Mathf.Abs(Physics.gravity.y); 
+        float jumpForce = rb.mass * (float) Math.Sqrt(2 * gravity * jumpHeight);
+        rb.AddForce(-Physics.gravity.normalized * jumpForce, ForceMode.Impulse);
+        jump = false;
+        animator.SetBool("isJumping", true);
+    }
+
+    void Attack() {
+        animator.SetTrigger("isAttacking");
     }
 
     bool IsGrounded() {
