@@ -1,37 +1,57 @@
+using System;
+using System.Numerics;
+using UnityEditor.Callbacks;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour {
-    private CharacterController controller;
+    private Rigidbody rb;
     private Vector3 velocity;
-    private float playerSpeed = 8.0f;
-    private float jumpHeight = 100.0f;
-    private float gravityValue = -6f;
+    public float playerSpeed = 8.0f;
+    public float jumpHeight = 10.0f;
     private Animator animator;
+    private Vector3 move;
+    private bool jump;
 
     private void Start() {
-        controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate() {
+        // Makes the player jump
+
+        if (jump && IsGrounded()) {
+            float gravity = Mathf.Abs(Physics.gravity.y); 
+            float jumpForce = rb.mass * (float) Math.Sqrt(2 * gravity * jumpHeight);
+            rb.AddForce(-Physics.gravity.normalized * jumpForce, ForceMode.Impulse);
+            jump = false;
+            animator.SetBool("isJumping", true);
+        } 
+        
+        rb.MovePosition(transform.position + move * Time.fixedDeltaTime * playerSpeed);
     }
 
     void Update() {
-        if (controller.isGrounded && velocity.y < 0) {
-            velocity.y = 0f;
-        }
-
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
         if (move != Vector3.zero) {
+            animator.SetBool("isSprinting", true);
             gameObject.transform.forward = move;
-            animator.Play("Sprint");
+
+        } else {
+            animator.SetBool("isSprinting", false);
         }
 
-        // Makes the player jump
-        if (Input.GetButtonDown("Jump") && controller.isGrounded) {
-            velocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+        if (Input.GetButtonDown("Jump")) {
+            jump = true;
+        } else if (rb.linearVelocity.y == 0 && animator.GetBool("isJumping")) {
+            animator.SetBool("isJumping", false);
         }
+    }
 
-        velocity.y += gravityValue * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
+    bool IsGrounded() {
+        float distToGround = GetComponent<Collider>().bounds.extents.y;
+        return Physics.Raycast(transform.position + Vector3.up, Vector3.down, 1.1f);
     }
 }
