@@ -3,7 +3,12 @@ using UnityEngine;
 public class Health : MonoBehaviour {
     private int maxHP;
     private int curHP;
-
+    
+    void Start() {
+        maxHP = 100;
+        curHP = maxHP;
+    }
+    
     void Update() {
         if (curHP < 0) {
             Die();
@@ -24,5 +29,9 @@ public class Health : MonoBehaviour {
 
     void Die() {
         
+    }
+    
+    public void AddMaxHP() {
+        maxHP += 10;
     }
 }
