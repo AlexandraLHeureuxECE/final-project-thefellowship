@@ -1,19 +1,24 @@
 using System;
-using System.Numerics;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
 
 public class Player : MonoBehaviour {
-    private Rigidbody rb;
-    private Vector3 velocity;
-    public float playerSpeed = 8.0f;
-    public float jumpHeight = 10.0f;
-    private Animator animator;
-    private Vector3 move;
-    private bool jump;
-    public Weapon weapon;
 
+    // Components of the Player GameObject:
+    private Animator animator;
+    private Rigidbody rb;
+
+    // Properties accessible by the Unity interface:
+    public float playerSpeed = 8.0f; // How fast the player moves (units / frame).
+    public float jumpHeight = 10.0f; // How high up the player jumps (units).
+    public Weapon weapon; // The GameObject with the Weapon script attached that the Player wields.
+
+    // Internal script properties:
+    private Vector3 move; // The Vector3 produced by the user's input.
+    private bool isJumping = false; // Rigidbody methods should be called in FixedUpdate() (in step with the physics system). These booleans are switched in the Update() method to communicate with FixedUpdate().
+    private bool isAttacking = false;
+
+    // Called on initialization of the scene.
     private void Start() {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -21,52 +26,59 @@ public class Player : MonoBehaviour {
         weapon.setOwner(gameObject);
     }
 
+    // Called once per physics update.
     void FixedUpdate() {
-        // Makes the player jump
-
-        if (jump && IsGrounded()) {
+        if (isJumping && IsGrounded()) {
             Jump();
         } 
+
+        if (isAttacking) {
+            Attack();
+        }
         
-        rb.MovePosition(transform.position + move * Time.fixedDeltaTime * playerSpeed);
+        rb.MovePosition(transform.position + move * Time.fixedDeltaTime * playerSpeed); // Moves the Rigidbody based on the Player's most recent input.
     }
 
+    // Called once per frame.
     void Update() {
-        move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")); // The move direction of the Player ("Horizontal" is x-movement and "Vertical" is z-movement).
 
+        // If input is received, move the Player and enable the Sprint animation. Else, disable the Sprint animation.
         if (move != Vector3.zero) {
-            animator.SetBool("isSprinting", true);
             gameObject.transform.forward = move;
-
+            animator.SetBool("isSprinting", true);
         } else {
             animator.SetBool("isSprinting", false);
         }
 
+        // If a "Jump" input is received, trigger the Jump() method from within FixedUpdate() through isJumping.
         if (Input.GetButtonDown("Jump")) {
-            jump = true;
-        } else if (rb.linearVelocity.y == 0 && animator.GetBool("isJumping")) {
-            animator.SetBool("isJumping", false);
+            isJumping = true;
         }
 
-        if(Input.GetButtonDown("Fire1")) {
-            Attack();
+        // If a "Fire1" (left mouse button) input is received, trigger the Attack() method from within FixedUpdate() through isAttacking.
+        if (Input.GetButtonDown("Fire1")) {
+            isAttacking = true;
         }
     }
 
+    // Causes the Player GameObject to jump, given the specified jumpHeight.
     void Jump() {
-        float gravity = Mathf.Abs(Physics.gravity.y); 
-        float jumpForce = rb.mass * (float) Math.Sqrt(2 * gravity * jumpHeight);
-        rb.AddForce(-Physics.gravity.normalized * jumpForce, ForceMode.Impulse);
-        jump = false;
-        animator.SetBool("isJumping", true);
+        float gravity = Mathf.Abs(Physics.gravity.y); // This could be precalculated, but I like the idea of being able to IN THEORY change the direction of gravity. I don't think we'll ever do it, but it's nice to know we can :)
+        float jumpForce = rb.mass * (float) Math.Sqrt(2 * gravity * jumpHeight); // Converts jumpHeight to a force that can be applied to the Rigidbody.
+        rb.AddForce(-Physics.gravity.normalized * jumpForce, ForceMode.Impulse); // Add jumpForce as an impulse force in the opposite direction of gravity.
+        animator.SetTrigger("isJumping"); // Triggers the "Jump" animation.
+        isJumping = false; // Reset the switch.
     }
 
+    // Causes the Player to attack using their Weapon (currently only plays the animation).
     void Attack() {
         animator.SetTrigger("isAttacking");
+        isAttacking = false;
     }
 
+    // Returns true if the Player is touching the ground (any ground, no tag required), and false otherwise.
     bool IsGrounded() {
-        float distToGround = GetComponent<Collider>().bounds.extents.y;
         return Physics.Raycast(transform.position + Vector3.up, Vector3.down, 1.1f);
     }
 }
