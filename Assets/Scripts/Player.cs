@@ -7,14 +7,18 @@ public class Player : MonoBehaviour {
     // Components of the Player GameObject:
     private Animator animator;
     private Rigidbody rb;
+    private Health health;
 
     // Properties accessible by the Unity interface:
+    public String name;
     public float playerSpeed = 8.0f; // How fast the player moves (units / frame).
     public float jumpHeight = 10.0f; // How high up the player jumps (units).
+    public Armour armour; // The GameObject with the Armour script attached that the Player wears.
     public Weapon weapon; // The GameObject with the Weapon script attached that the Player wields.
 
     // Internal script properties:
     private Vector3 move; // The Vector3 produced by the user's input.
+    private int level; // The Player's experience level.
     private bool isJumping = false; // Rigidbody methods should be called in FixedUpdate() (in step with the physics system). These booleans are switched in the Update() method to communicate with FixedUpdate().
     private bool isAttacking = false;
 
@@ -22,6 +26,7 @@ public class Player : MonoBehaviour {
     private void Start() {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        health = GetComponent<Health>();
 
         weapon.setOwner(gameObject);
     }
@@ -75,6 +80,16 @@ public class Player : MonoBehaviour {
     void Attack() {
         animator.SetTrigger("isAttacking");
         isAttacking = false;
+    }
+
+    // Increases the level of the Player by one (not sure what else to put here at the moment...)
+    void LevelUp() {
+        level++;
+    }
+
+    // Changes the equipped weapon.
+    void Equip(Weapon weapon) {
+        this.weapon = weapon;
     }
 
     // Returns true if the Player is touching the ground (any ground, no tag required), and false otherwise.

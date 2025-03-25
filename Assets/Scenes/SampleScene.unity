@@ -519,8 +519,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5280ddb3092b28479d89240ec3b5a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
   playerSpeed: 10
   jumpHeight: 1
+  armour: {fileID: 0}
   weapon: {fileID: 782201914}
 --- !u!54 &696553043
 Rigidbody:
@@ -572,6 +574,18 @@ CapsuleCollider:
   m_Height: 1.95
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &696553045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696553036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e699b313a3f9d4dad7d980d26d35a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &782201909
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +761,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1782702501690864755, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
       insertIndex: -1
       addedObject: {fileID: 696553044}
+    - targetCorrespondingSourceObject: {fileID: 1782702501690864755, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 696553045}
   m_SourcePrefab: {fileID: 100100000, guid: 60770bdb4dc667c45bea53db0339dc05, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
