@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "2250-The-Fellowship.sln"
+    "dotnet.defaultSolution": "final-project-thefellowship.sln"
 }
