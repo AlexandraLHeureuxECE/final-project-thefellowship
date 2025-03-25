@@ -507,6 +507,8 @@ MonoBehaviour:
   name: 
   playerSpeed: 7.5
   jumpHeight: 1.5
+  throwForce: 30
+  maxDistance: 15
   armour: {fileID: 0}
   weapon: {fileID: 782201914}
 --- !u!54 &696553043
@@ -583,7 +585,8 @@ GameObject:
   - component: {fileID: 782201912}
   - component: {fileID: 782201911}
   - component: {fileID: 782201914}
-  m_Layer: 0
+  - component: {fileID: 782201916}
+  m_Layer: 6
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -652,7 +655,7 @@ Transform:
   m_GameObject: {fileID: 782201909}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.13040742, y: 3.3957107, z: -0.022975825}
+  m_LocalPosition: {x: 21.8, y: 3.3957107, z: 38}
   m_LocalScale: {x: 0.05, y: 1, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -673,6 +676,28 @@ MonoBehaviour:
   damage: 0
   knockback: 0
   reach: 0
+--- !u!64 &782201916
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782201909}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &848490233
 PrefabInstance:
   m_ObjectHideFlags: 0

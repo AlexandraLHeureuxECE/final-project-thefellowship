@@ -1,5 +1,7 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Vector3 = UnityEngine.Vector3;
 
 public class Player : MonoBehaviour {
@@ -13,6 +15,8 @@ public class Player : MonoBehaviour {
     public String name;
     public float playerSpeed = 8.0f; // How fast the player moves (units / frame).
     public float jumpHeight = 10.0f; // How high up the player jumps (units).
+    public float throwForce = 30.0f;
+    public float maxDistance = 15.0f;
     public Armour armour; // The GameObject with the Armour script attached that the Player wears.
     public Weapon weapon; // The GameObject with the Weapon script attached that the Player wields.
 
@@ -21,7 +25,6 @@ public class Player : MonoBehaviour {
     private int level; // The Player's experience level.
     private bool isJumping = false; // Rigidbody methods should be called in FixedUpdate() (in step with the physics system). These booleans are switched in the Update() method to communicate with FixedUpdate().
     private bool isAttacking = false;
-    private bool isThrowing = false;
 
     // Called on initialization of the scene.
     private void Start() {
@@ -29,7 +32,7 @@ public class Player : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         health = GetComponent<Health>();
 
-        weapon.setOwner(gameObject);
+        weapon.SetOwner(gameObject);
     }
 
     // Called once per physics update.
@@ -65,10 +68,6 @@ public class Player : MonoBehaviour {
         // If a "Fire1" (left mouse button) input is received, trigger the Attack() method from within FixedUpdate() through isAttacking.
         if (Input.GetButtonDown("Fire1")) {
             isAttacking = true;
-        }
-
-        if (Input.GetButtonDown("Fire2")) {
-            isThrowing = true;
         }
     }
 
