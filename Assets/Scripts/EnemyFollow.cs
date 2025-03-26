@@ -13,6 +13,8 @@ public class EnemyFollow : MonoBehaviour
 
     private Animator _animator;
 
+    private float timeInAttackRange = 0f; // for smoother attacks
+    
     //Adjustments for gravity
     private float vertVelocity = 0f;
     public float gravity = -9.81f;
@@ -70,12 +72,22 @@ public class EnemyFollow : MonoBehaviour
                 _animator.SetBool("isWalking", false);
         }
 
-        //Atack distance
-        if (distance <= attackDistance && Time.time >= lastAttackTime + attackDelay)
+        if ( distance <= attackDistance)
         {
-            Attack();
-            lastAttackTime = Time.time;
+            timeInAttackRange += Time.deltaTime;
+            
+            if (distance <= attackDistance && Time.time >= lastAttackTime + attackDelay) //Attack distance
+            {
+                Attack();
+                lastAttackTime = Time.time;
+                timeInAttackRange = 0f; //Reset to avoid chaining attacks
+            }
         }
+        else
+        {
+            timeInAttackRange = 0f;// rset if player leaves the attack range
+        }
+       
     }
     
     //Sets trigger to do attack animation

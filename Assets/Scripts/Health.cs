@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour {
-    private int maxHP;
+public class Health : MonoBehaviour
+{
+    protected int maxHP = 100;
     private int curHP;
     
-    void Start() {
-        maxHP = 100;
+    protected virtual void Start() {
         curHP = maxHP;
     }
     
@@ -23,12 +23,18 @@ public class Health : MonoBehaviour {
         }
     }
 
-    void TakeDamage(int hp) {
-        curHP -= hp;
+    public virtual void TakeDamage(int damage) {
+        curHP -= damage;
+        
+        
+        if (curHP <= 0) {
+       
+            Die();
+        }
     }
 
-    void Die() {
-        
+    public virtual void Die() {
+        Destroy(gameObject);
     }
     
     public void AddMaxHP() {
