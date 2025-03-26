@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4200337681874900661
+--- !u!1001 &6075819602437395241
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1234870023674008814, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.791754
+      value: 31.672
       objectReference: {fileID: 0}
     - target: {fileID: 1234870023674008814, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1234870023674008814, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.340366
+      value: 28.185
       objectReference: {fileID: 0}
     - target: {fileID: 1234870023674008814, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -70,7 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4497306834222978396, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
       propertyPath: m_Name
-      value: SkeletonEnemy Variant Variant
+      value: SkeletonEnemy(Main) 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497306834222978396, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78,26 +82,26 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4497306834222978396, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1259543167390215221}
+      addedObject: {fileID: 5134976951250745926}
     - targetCorrespondingSourceObject: {fileID: 4497306834222978396, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6832805392027221568}
+      addedObject: {fileID: 1503805227383587158}
     - targetCorrespondingSourceObject: {fileID: 4497306834222978396, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2649433286751390944}
+      addedObject: {fileID: 6547435658327603037}
   m_SourcePrefab: {fileID: 100100000, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
---- !u!1 &298148395751261161 stripped
+--- !u!1 &7653868666922911349 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4497306834222978396, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
-  m_PrefabInstance: {fileID: 4200337681874900661}
+  m_PrefabInstance: {fileID: 6075819602437395241}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1259543167390215221
+--- !u!54 &5134976951250745926
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298148395751261161}
+  m_GameObject: {fileID: 7653868666922911349}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -118,13 +122,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &6832805392027221568
+--- !u!136 &1503805227383587158
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298148395751261161}
+  m_GameObject: {fileID: 7653868666922911349}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -141,13 +145,13 @@ CapsuleCollider:
   m_Height: 1.14
   m_Direction: 1
   m_Center: {x: 0, y: 0.61, z: 0}
---- !u!114 &2649433286751390944
+--- !u!114 &6547435658327603037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298148395751261161}
+  m_GameObject: {fileID: 7653868666922911349}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a2087a77168bd44dad0304e260012a1, type: 3}

@@ -82,7 +82,7 @@ public class Player : MonoBehaviour {
     }
 
     // Causes the Player to attack using their Weapon (currently only plays the animation).
-    void Attack() {
+    public void Attack() {
         animator.SetTrigger("isAttacking");
         isAttacking = false;
     }

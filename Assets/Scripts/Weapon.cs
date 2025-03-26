@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour {
 
     public void setOwner(GameObject player) {
         this.player = player; // is attached to palyer
-        holdTransform = player.transform.Find("Armature").Find("Root_M").Find("Spine1_M").Find("Spine2_M").Find("Chest_M").Find("Scapula_R").Find("Shoulder_R").Find("Elbow_R").Find("Wrist_R");
+        holdTransform = player.transform.Find("Armature").Find("Root_M").Find("Spine1_M").Find("Spine2_M").Find("Chest_M").Find("Scapula_R").Find("Shoulder_R").Find("Elbow_R").Find("Wrist_R").Find("jointItemR");
     }
 
     private void Start()
@@ -36,7 +36,7 @@ public class Weapon : MonoBehaviour {
 
         if(Time.time - hitCooldownTime < hitCooldown) return; //Cooldown
 
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy")) //If the player is attacking
         {
             if (marker != null)
             {
