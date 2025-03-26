@@ -96,6 +96,12 @@ public class EnemyFollow : MonoBehaviour
         if (_animator != null)
             _animator.SetTrigger("Attack");
     }
+
+    void Knockback()
+    {
+        
+    }
+    
     
 }
 
