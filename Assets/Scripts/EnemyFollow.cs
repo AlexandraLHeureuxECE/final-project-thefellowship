@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyFollow : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class EnemyFollow : MonoBehaviour
     public float stoppingDistance = 3f;
     public float attackDistance = 2f;
     public float attackDelay = 1.5f;
+    public float kncockbackForce = 10f;
 
     private CharacterController controller;
 
@@ -18,7 +20,6 @@ public class EnemyFollow : MonoBehaviour
     //Adjustments for gravity
     private float vertVelocity = 0f;
     public float gravity = -9.81f;
-
     private float lastAttackTime = -Mathf.Infinity;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -97,9 +98,11 @@ public class EnemyFollow : MonoBehaviour
             _animator.SetTrigger("Attack");
     }
 
-    void Knockback()
+    public void Knockback(Vector3 direction)
     {
-        
+        Vector3 knockbackDirection = direction.normalized * kncockbackForce;
+        knockbackDirection.y = 0;  // keep horizontal
+        controller.Move(knockbackDirection * Time.deltaTime);
     }
     
     

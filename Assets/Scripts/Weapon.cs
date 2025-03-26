@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
     public float damage = 25;
-    public double knockback;
     public double reach;
     private GameObject player;
     private Transform holdTransform;
@@ -30,10 +29,7 @@ public class Weapon : MonoBehaviour {
     
     private void OnTriggerEnter(Collider other)
     {
-        
-        
         if (other.CompareTag("Player")) return; //So it doesnt hit player
-
         if(Time.time - hitCooldownTime < hitCooldown) return; //Cooldown
 
         if (other.CompareTag("Enemy")) //If the player is attacking
@@ -43,6 +39,15 @@ public class Weapon : MonoBehaviour {
                 marker.ShowHitMarker();
             }
             
+            //Knockback enemy
+            EnemyFollow _enemyFollow = other.GetComponentInParent<EnemyFollow>();
+            if (_enemyFollow != null)
+            {
+                Vector3 knockDirection = other.transform.position - player.transform.position;
+                _enemyFollow.Knockback(knockDirection);
+            }
+            
+            //Deal Damage
             EnemyHealth health = other.GetComponentInParent<EnemyHealth>();
             if (health != null)
             {
@@ -51,4 +56,7 @@ public class Weapon : MonoBehaviour {
             }
         }
     }
+    
 }
+
+// Compare this snippet from Assets/Scripts/Armour.cs:
