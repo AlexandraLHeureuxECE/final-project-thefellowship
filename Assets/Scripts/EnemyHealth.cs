@@ -7,6 +7,8 @@ public class EnemyHealth : Health
 
     private Animator _animator;
     private bool isDead = false;
+  
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()

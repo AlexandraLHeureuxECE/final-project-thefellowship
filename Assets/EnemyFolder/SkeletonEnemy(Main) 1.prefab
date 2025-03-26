@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: attackDelay
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4170816359574976856, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
+      propertyPath: kncockbackForce
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4497306834222978396, guid: 9a26660ed0518e74e81d91606a2c7a4d, type: 3}
       propertyPath: m_Name
       value: SkeletonEnemy(Main) 1
