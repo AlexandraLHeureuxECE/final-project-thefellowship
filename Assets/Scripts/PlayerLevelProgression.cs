@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using MagicPigGames;
+using UnityEngine;
+using ProgressBar = UnityEngine.UIElements.ProgressBar;
 
 namespace DefaultNamespace
 {
-    public class PlayerLevelProgression : MonoBehaviour
+    public class PlayerLevelProgression : MonoBehaviour 
     {
         private int level; 
         private int xp;
@@ -11,6 +13,8 @@ namespace DefaultNamespace
         private int xpForLevelComplete;
         private Health health;
         private Armour armour;
+        private ProgressBar healthBar;
+        private ProgressBar xpBar;
         
         void Start()
         {
@@ -30,6 +34,7 @@ namespace DefaultNamespace
         void GainXP(int xp)
         {
             this.xp += xp;
+            
             if (this.xp >= xpToNextLevel)
             {
                 level++;
