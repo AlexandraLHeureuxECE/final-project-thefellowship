@@ -32,7 +32,7 @@ public class CharacterCustimizationUI : MonoBehaviour
          Debug.Log("Save Button Clicked");
          playerCharacterCustomize.Save();
          // Optional: Load next scene here
-          //SceneManager.LoadScene(3);
+          SceneManager.LoadScene(2);
       });
       LoadButton.onClick.AddListener(() =>
       {
