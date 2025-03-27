@@ -21,6 +21,7 @@ public class EnemyHealth : Health
     
     public override void Die()
     {
+        
         EnemyFollow follow = GetComponent<EnemyFollow>();
         
         if (isDead) return;
