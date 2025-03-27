@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -70,7 +71,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            // Replace with your scene name or build index
+            SceneManager.LoadScene(3);
         }
     }
 }
