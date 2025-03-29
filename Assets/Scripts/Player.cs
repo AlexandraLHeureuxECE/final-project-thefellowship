@@ -58,18 +58,18 @@ public class Player : MonoBehaviour {
         }
 
         // If a "Jump" input is received, trigger the Jump() method from within FixedUpdate() through isJumping.
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             isJumping = true;
         }
 
         // If a "Fire1" (left mouse button) input is received, trigger the Attack() method from within FixedUpdate() through isAttacking.
-        if (Input.GetButtonDown("Fire1")) {
-            isAttacking = true;
-        }
+        //if (Input.GetButtonDown("Fire1")) {
+        //    isAttacking = true;
+        //}
 
-        if (Input.GetButtonDown("Fire2")) {
-            isThrowing = true;
-        }
+        //if (Input.GetButtonDown("Fire2")) {
+        //    isThrowing = true;
+        //}
     }
 
     // Causes the Player GameObject to jump, given the specified jumpHeight.
