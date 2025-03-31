@@ -3,22 +3,25 @@ using UnityEngine;
 
 public class OutOfBounds : MonoBehaviour
 {
-    public Transform respawnLocation;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start() {
-        
-    }
-
-    // Update is called once per frame
-    void Update() {
-        
-    }
+    public Transform respawnLocation; // The location to return the Player to.
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.GetComponent<Player>() != null) {
             other.gameObject.transform.position = respawnLocation.position;
-            Debug.Log("HIT!");
+
+            // Reset all spawn triggers.
+            GameObject[] spawnTriggers = GameObject.FindGameObjectsWithTag("SpawnTrigger");
+
+            foreach (GameObject spawnTrigger in spawnTriggers) {
+                spawnTrigger.GetComponent<EnemySpawn>().ResetSpawnTrigger();
+            }
+
+            // Destroy all existing enemy GameObjects.
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            foreach (GameObject enemy in enemies) {
+                Destroy(enemy);
+            }
         }
     }
 }

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Spawn1
+  - Spawn2
+  - Spawn3
+  - SpawnTrigger
   layers:
   - Default
   - TransparentFX
