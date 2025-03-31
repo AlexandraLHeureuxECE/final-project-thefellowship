@@ -20,8 +20,8 @@ public class Player : MonoBehaviour {
     private Vector3 move; // The Vector3 produced by the user's input.
     private int level; // The Player's experience level.
     private bool isJumping = false; // Rigidbody methods should be called in FixedUpdate() (in step with the physics system). These booleans are switched in the Update() method to communicate with FixedUpdate().
-    private bool isAttacking = false;
-    private bool isThrowing = false;
+    //private bool isAttacking = false;
+    //private bool isThrowing = false;
 
     // Called on initialization of the scene.
     private void Start() {
@@ -38,9 +38,9 @@ public class Player : MonoBehaviour {
             Jump();
         } 
 
-        if (isAttacking) {
-            Attack();
-        }
+        //if (isAttacking) {
+          //  Attack();
+        //}
         
         rb.MovePosition(transform.position + move * Time.fixedDeltaTime * playerSpeed); // Moves the Rigidbody based on the Player's most recent input.
     }
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour {
     // Causes the Player to attack using their Weapon (currently only plays the animation).
     void Attack() {
         animator.SetTrigger("isAttacking");
-        isAttacking = false;
+        //isAttacking = false;
     }
 
     // Increases the level of the Player by one (not sure what else to put here at the moment...)
