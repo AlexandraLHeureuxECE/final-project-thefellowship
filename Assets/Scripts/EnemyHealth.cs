@@ -4,7 +4,6 @@ public class EnemyHealth : Health
 {
  //Inherits from Health.cs and modifies the Die() method to include a death animation and effect.
     public GameObject deathEffect;
-
     private Animator _animator;
     private bool isDead = false;
   

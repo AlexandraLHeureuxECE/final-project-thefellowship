@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.098
@@ -10509,7 +10509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b575e9768724e8249be8992a171f278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 164545034021021064, guid: 2c58c82667999774e9c7e52336842e70, type: 3}
+  enemyPrefab: {fileID: 1052862023081061583, guid: 0a4aeb04a265aaf4d83fabfcf385c6b2, type: 3}
   tag: Spawn2
 --- !u!135 &613060898
 SphereCollider:
@@ -25416,6 +25416,19 @@ MonoBehaviour:
     - {fileID: 4867669987536050029, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
     - {fileID: -2854808510063695659, guid: 10399581d9d41a44bb8984ec628263dd, type: 3}
     SkinnedMeshRenderer: {fileID: 0}
+--- !u!114 &1343742578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343742569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ae84a7efe047249afa8a4573dccc51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnLocation: {fileID: 40739274}
 --- !u!1001 &1344783478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26001,7 +26014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b575e9768724e8249be8992a171f278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 164545034021021064, guid: 2c58c82667999774e9c7e52336842e70, type: 3}
+  enemyPrefab: {fileID: 1052862023081061583, guid: 0a4aeb04a265aaf4d83fabfcf385c6b2, type: 3}
   tag: Spawn1
 --- !u!1 &1372808599
 GameObject:
@@ -35097,7 +35110,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2620574885125927083, guid: 40f9d55d483d35648a6caca493975c6f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -35107,6 +35121,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7074881952234384209, guid: 40f9d55d483d35648a6caca493975c6f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1343742576}
+    - targetCorrespondingSourceObject: {fileID: 7074881952234384209, guid: 40f9d55d483d35648a6caca493975c6f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1343742578}
   m_SourcePrefab: {fileID: 100100000, guid: 40f9d55d483d35648a6caca493975c6f, type: 3}
 --- !u!1001 &1834503403
 PrefabInstance:
@@ -40235,7 +40252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b575e9768724e8249be8992a171f278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 164545034021021064, guid: 2c58c82667999774e9c7e52336842e70, type: 3}
+  enemyPrefab: {fileID: 1052862023081061583, guid: 0a4aeb04a265aaf4d83fabfcf385c6b2, type: 3}
   tag: Spawn3
 --- !u!135 &2131042661
 SphereCollider:

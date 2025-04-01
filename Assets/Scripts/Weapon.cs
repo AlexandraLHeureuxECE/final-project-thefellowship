@@ -1,4 +1,5 @@
 using System;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
@@ -27,7 +28,7 @@ public class Weapon : MonoBehaviour {
         transform.rotation = holdTransform.rotation;
     }
     
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) return; //So it doesnt hit player
         if(Time.time - hitCooldownTime < hitCooldown) return; //Cooldown
