@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 22375515}
   - component: {fileID: 22375519}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: End Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7df243f2b69c7b4faa69a150a72833f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSceneName: PlayerTestScene
+  newSceneName: Mysterious Dungeon
 --- !u!1 &29311665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 118458008299423567, guid: 1211a8a70ccbf8941b4f049e54df814a, type: 3}
