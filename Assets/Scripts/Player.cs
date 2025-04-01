@@ -21,7 +21,6 @@ public class Player : MonoBehaviour {
     private int level; // The Player's experience level.
     private bool isJumping = false; // Rigidbody methods should be called in FixedUpdate() (in step with the physics system). These booleans are switched in the Update() method to communicate with FixedUpdate().
     private bool isAttacking = false;
-    private bool isThrowing = false;
 
     // Called on initialization of the scene.
     private void Start() {
@@ -58,17 +57,13 @@ public class Player : MonoBehaviour {
         }
 
         // If a "Jump" input is received, trigger the Jump() method from within FixedUpdate() through isJumping.
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetButtonDown("Jump")) {
             isJumping = true;
         }
 
-        // If a "Fire1" (left mouse button) input is received, trigger the Attack() method from within FixedUpdate() through isAttacking.
-        if (Input.GetButtonDown("Fire1")) {
-            isAttacking = true;
-        }
-
+        //If a "Fire2" (by default right mouse button) input is received, trigger the Attack() method from within FixedUpdate() through isAttacking.
         if (Input.GetButtonDown("Fire2")) {
-            isThrowing = true;
+            isAttacking = true;
         }
     }
 
