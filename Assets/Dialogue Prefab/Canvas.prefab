@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 2647007777831545767}
   - component: {fileID: 3995489351943578690}
   - component: {fileID: 4825426060912498117}
-  - component: {fileID: 822519426848037332}
-  - component: {fileID: 7671465098119516266}
+  - component: {fileID: 7473965368604012425}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -78,7 +77,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &822519426848037332
+--- !u!114 &7473965368604012425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,35 +86,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2708691103229865695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1aff3e4aea55e84aa3b2a66aff9c41a, type: 3}
+  m_Script: {fileID: 11500000, guid: d56ee56d8d70feb44930aa51615b4143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 2676932604078034961}
   lines:
-  - ...
-  - '[You]: Where Am I?'
-  - '[Unkown]: Welcome to Polyland'
-  - '[Unkown]: You are stuck here away from your office work forever'
-  - '[Unkown]: You must complete our deadly quests to get out.'
-  - '[You]: Stuck??!!! '
-  - '[You]: What do you mean what are you talking about?'
-  - '[Unkown]: GOOD LUCK (Vanishes).'
-  textSpeed: 0.8
---- !u!114 &7671465098119516266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2708691103229865695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1aff3e4aea55e84aa3b2a66aff9c41a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 0}
-  lines: []
-  textSpeed: 0
+  - '[COWBOY]:  Congrats on finishing this level!'
+  - '[COWBOY]: you''re very tough.'
+  - '[YOU]: Thank you it''s nothing for a guy like me.'
+  - '[YOU]: were you just watching me? why didn''t you help'
+  - '[COWBOY]: .... BYE good luck on the rest.'
+  textSpeed: 0.5
 --- !u!1 &5395546789221370246
 GameObject:
   m_ObjectHideFlags: 0
