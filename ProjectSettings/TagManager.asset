@@ -5,16 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
-  - Spawn1
-  - Spawn2
-  - Spawn3
-  - SpawnTrigger
-  - EnemyWeapon
+  - WallFade
+  - Boss
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
   - 
