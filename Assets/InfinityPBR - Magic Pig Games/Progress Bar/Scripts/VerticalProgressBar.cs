@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace MagicPigGames {
+namespace Progression {
     [Serializable]
     public class VerticalProgressBar : ProgressBar {       
         protected override float SizeMin => rectTransform.sizeDelta.y * sizeMin; // Minimum size of the overlay bar.

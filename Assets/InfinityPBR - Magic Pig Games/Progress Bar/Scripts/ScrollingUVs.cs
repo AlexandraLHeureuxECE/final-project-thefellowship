@@ -4,7 +4,7 @@ using UnityEngine.UI;
 // Add this to a UI RawImage to make its texture scroll
 // Note: Your RawImage's texture should have 'Wrap Mode' set to 'Repeat' in its import settings
 
-namespace MagicPigGames
+namespace Progression
 {
     [RequireComponent(typeof(RawImage))]
     public class ScrollingUVs : MonoBehaviour
