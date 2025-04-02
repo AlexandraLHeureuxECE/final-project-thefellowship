@@ -9,6 +9,7 @@ TagManager:
   - Spawn2
   - Spawn3
   - SpawnTrigger
+  - EnemyWeapon
   layers:
   - Default
   - TransparentFX

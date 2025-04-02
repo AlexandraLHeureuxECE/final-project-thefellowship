@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
     private int curHP;
     
     protected virtual void Start() {
-        curHP = maxHP;
+        ResetHealth();
     }
     
     void Update() {
@@ -23,12 +23,14 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void ResetHealth() {
+        curHP = maxHP;
+    }
+
     public virtual void TakeDamage(int damage) {
         curHP -= damage;
         
-        
         if (curHP <= 0) {
-       
             Die();
         }
     }
