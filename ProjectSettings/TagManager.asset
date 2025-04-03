@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - MovingPlatform
   - Spawn1
+  - WallFade
+  - Boss
+  - SpawnTrigger
   layers:
   - Default
   - TransparentFX

@@ -112,28 +112,7 @@ public class PillarInteract : MonoBehaviour
         PillarInteract.isSpawning = false;
         gameObject.SetActive(false);
     }
-
-
-    //private System.Collections.IEnumerator BossEntranceSequence()
-    //{
-      //   4. Enable Undead King & trigger animation
-        //undeadKing.SetActive(true);
-        //Animator anim = undeadKing.GetComponent<Animator>();
-        //anim.Play("Walk");
-
-        // 5. Let him walk for 3 seconds
-        //yield return new WaitForSeconds(3f);
-
-        // 6. (Optional) wait then switch back to gameplay cam
-       //yield return new WaitForSeconds(2f);
-       //anim.SetTrigger("BackToStand");
-      
-       //Debug.Log("Swithc back to paly cam");
-       // bossCam.Priority = 5; 
-     //   playcam.Priority = 20;
-        
-   //}
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !PillarInteract.isSpawning)
