@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DialogueBox.unity
     guid: 84a9997a6ff9d0a48a278f439535ef41
   - enabled: 1
-    path: Assets/Scenes/Demo_Scene/Demo_Scene.unity
+    path: Assets/Scenes/Level1/Demo_Scene.unity
     guid: 1c6d75eaa80797041a20dd6a10c1f6d2
   - enabled: 1
     path: Assets/Scenes/Level2.unity

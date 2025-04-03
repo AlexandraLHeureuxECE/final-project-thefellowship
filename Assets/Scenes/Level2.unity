@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.098
@@ -23317,7 +23317,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -25771,9 +25772,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnLocation: {fileID: 40739274}
-  healthBarSlider: {fileID: 0}
+  healthBarSlider: {fileID: 1603976375701645817, guid: c8c8b30de2e2b224892a133de2e172a5, type: 3}
   healthText: {fileID: 0}
-  deathScreen: {fileID: 0}
+  deathScreen: {fileID: 2398889363741935469, guid: 995234d84bc2dc847b56c13e56b40e2b, type: 3}
 --- !u!1001 &1344783478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31354,7 +31355,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
