@@ -62,7 +62,8 @@ public class NpcDialogue : MonoBehaviour
         }
         else
         {
-            dialogueStarted = false;
+            // Replace with your scene name or build index
+            SceneManager.LoadScene(6);
         }
     }
 }
