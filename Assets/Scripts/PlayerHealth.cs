@@ -73,6 +73,7 @@ public class PlayerHealth : Health {
         if (playerScript != null)
             playerScript.enabled = true;
         ResetHealth();
+        PillarInteract.pillarPressCount = 0;
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
