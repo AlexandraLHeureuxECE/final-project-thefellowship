@@ -910,13 +910,13 @@ MonoBehaviour:
   bodyPartDataArray:
   - bodyPartType: 0
     meshArray:
-    - {fileID: 5527997819427274060, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
     - {fileID: -2854808510063695659, guid: 10399581d9d41a44bb8984ec628263dd, type: 3}
+    - {fileID: 5527997819427274060, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
     SkinnedMeshRenderer: {fileID: 816683450}
   - bodyPartType: 1
     meshArray:
-    - {fileID: 4867669987536050029, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
     - {fileID: -2854808510063695659, guid: 10399581d9d41a44bb8984ec628263dd, type: 3}
+    - {fileID: 4867669987536050029, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
     SkinnedMeshRenderer: {fileID: 2103366345}
 --- !u!137 &816683450 stripped
 SkinnedMeshRenderer:
