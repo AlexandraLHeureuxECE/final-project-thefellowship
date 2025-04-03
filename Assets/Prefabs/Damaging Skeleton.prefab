@@ -60,9 +60,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4913551143985469733, guid: 3ed4c504c44d06d428bba59b42daf868, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913551143985469733, guid: 3ed4c504c44d06d428bba59b42daf868, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5486074898800354440, guid: 3ed4c504c44d06d428bba59b42daf868, type: 3}
       propertyPath: hitCooldownTime
-      value: 0
+      value: -999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
