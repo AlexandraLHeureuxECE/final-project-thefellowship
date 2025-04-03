@@ -56,6 +56,17 @@ public class Weapon : MonoBehaviour {
                 hitCooldownTime = Time.time;
             }
         }
+        
+        if(other.CompareTag("Boss")) // If player is attacking boss
+        {
+            BossHealth health = other.GetComponentInParent<BossHealth>();
+            if (health != null)
+            {
+                health.TakeDamage((int)damage); //Damage the enemy
+                hitCooldownTime = Time.time;
+            }
+        }
+        
     }
     
 }
