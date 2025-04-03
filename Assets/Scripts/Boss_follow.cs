@@ -18,11 +18,15 @@ public class BossFollow : MonoBehaviour
     public float gravity = -9.81f;
     private float vertVelocity = 0f;
     private bool canFollow = false; // Controlled by animation end
+    public Collider swordCollider; 
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        
+        if (swordCollider != null)
+            swordCollider.enabled = false;
     }
 
     void Update()
@@ -84,6 +88,8 @@ public class BossFollow : MonoBehaviour
     {
         animator?.SetTrigger("Attack");
         animator?.SetBool("isWalking", true);
+        
+        StartCoroutine(ActivateSwordHitbox());
     }
 
     public void Knockback(Vector3 direction)
@@ -94,5 +100,31 @@ public class BossFollow : MonoBehaviour
     public void EnableFollow()
     {
         canFollow = true;
+    }
+    
+    public void EnableSwordCollider()
+    {
+        if (swordCollider != null)
+            swordCollider.enabled = true;
+    }
+
+    public void DisableSwordCollider()
+    {
+        if (swordCollider != null)
+            swordCollider.enabled = false;
+    }
+    
+    private System.Collections.IEnumerator ActivateSwordHitbox()
+    {
+        yield return new WaitForSeconds(1f);
+
+        if (swordCollider != null)
+            swordCollider.enabled = true;
+
+        // Wait for duration of the attack animation (adjust this to match your swing)
+        yield return new WaitForSeconds(1f);
+
+        if (swordCollider != null)
+            swordCollider.enabled = false;
     }
 }
