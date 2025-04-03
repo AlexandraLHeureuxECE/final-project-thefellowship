@@ -348,7 +348,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2498,6 +2499,11 @@ MonoBehaviour:
   - {fileID: 92456219}
   enemyCount: 6
   spawnDelay: 1
+  playcam: {fileID: 0}
+  undeadKing: {fileID: 0}
+  bossCam: {fileID: 0}
+  allEnemies: []
+  panScript: {fileID: 0}
   firstButtonText: {fileID: 1553980719}
   secondButtonText: {fileID: 1357393456}
   displayTime: 3
@@ -6258,6 +6264,11 @@ MonoBehaviour:
   - {fileID: 92456219}
   enemyCount: 7
   spawnDelay: 1
+  playcam: {fileID: 0}
+  undeadKing: {fileID: 0}
+  bossCam: {fileID: 0}
+  allEnemies: []
+  panScript: {fileID: 0}
   firstButtonText: {fileID: 1553980719}
   secondButtonText: {fileID: 1357393456}
   displayTime: 3
@@ -7621,6 +7632,11 @@ MonoBehaviour:
   - {fileID: 92456219}
   enemyCount: 10
   spawnDelay: 1
+  playcam: {fileID: 0}
+  undeadKing: {fileID: 0}
+  bossCam: {fileID: 0}
+  allEnemies: []
+  panScript: {fileID: 0}
   firstButtonText: {fileID: 1553980719}
   secondButtonText: {fileID: 1357393456}
   displayTime: 3
@@ -10282,7 +10298,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace MagicPigGames
+namespace Progression
 {
     [Serializable]
     public class ProgressBar : MonoBehaviour
@@ -46,6 +46,13 @@ namespace MagicPigGames
         /// Sets the progress bar to the given value between 0 and 1. Compute the percent and pass that in.
         /// </summary>
         /// <param name="progress"></param>
+        /// 
+
+        protected virtual void Start()
+        {
+            SetProgress(0f); // Ensure progress starts at 0
+        }
+
         public virtual void SetProgress(float progress)
         {
             if (progress is > 1 or < 0)
@@ -151,6 +158,13 @@ namespace MagicPigGames
             
             _lastParentSize = rectTransform.sizeDelta;
         }
+
+        public void IncrementProgress(float amount)
+        {
+            float newProgress = Mathf.Clamp(_progress + amount, 0f, 1f);
+            SetProgress(newProgress);
+        }
+
     }
 
 }

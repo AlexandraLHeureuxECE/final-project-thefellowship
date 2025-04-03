@@ -1383,6 +1383,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   reach: 0
+  hitCooldown: 0.5
+  hitCooldownTime: -999
 --- !u!136 &782201915
 CapsuleCollider:
   m_ObjectHideFlags: 0

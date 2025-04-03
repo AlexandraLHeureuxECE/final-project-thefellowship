@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace MagicPigGames
+namespace Progression
 {
     public class ProgressBarInspectorTest : MonoBehaviour
     {
