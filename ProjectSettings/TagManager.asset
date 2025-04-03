@@ -10,6 +10,9 @@ TagManager:
   - WallFade
   - Boss
   - SpawnTrigger
+  - Spawn3
+  - Spawn2
+  - XPIncrement
   layers:
   - Default
   - TransparentFX
