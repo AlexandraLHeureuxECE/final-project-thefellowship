@@ -1,5 +1,5 @@
 using System;
-namespace MagicPigGames
+namespace Progression
 {
     [Serializable]
     public class HorizontalProgressBar : ProgressBar

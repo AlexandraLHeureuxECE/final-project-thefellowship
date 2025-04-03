@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace MagicPigGames
+namespace Progression
 {
     [Serializable]
     public class ProgressBar : MonoBehaviour

@@ -1,4 +1,4 @@
-﻿using MagicPigGames;
+﻿using Progression;
 using UnityEngine;
 using ProgressBar = UnityEngine.UIElements.ProgressBar;
 
