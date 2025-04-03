@@ -14,6 +14,7 @@ public class EnemyWeapon : Weapon
                 hitCooldownTime = Time.time;
             }
             
+            Debug.Log("Weapon hit: " + other.name);
             Debug.Log("Hit player");
         }
     }

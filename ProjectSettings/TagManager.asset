@@ -16,6 +16,8 @@ TagManager:
   - Spawn4
   - LavaEnd
   - LavaSpawn
+  - XPIncrement
+
   layers:
   - Default
   - TransparentFX

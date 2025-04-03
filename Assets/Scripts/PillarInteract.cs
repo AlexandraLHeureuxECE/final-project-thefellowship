@@ -2,6 +2,7 @@ using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using Unity.Cinemachine;
+using UnityEngine.UI;
 
 public class PillarInteract : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class PillarInteract : MonoBehaviour
     public CinemachineCamera bossCam;
     public GameObject[] allEnemies;
     public BossCamPan panScript;
+    public GameObject bossHealthUI;
+    public Slider healthBarSlider;
     
     public static int pillarPressCount = 0; // Static variable to track the number of times the pillar has been pressed
 
@@ -83,6 +86,24 @@ public class PillarInteract : MonoBehaviour
         if (undeadKing != null)
         {
             undeadKing.SetActive(true);
+
+            // 🛠 Assign the slider from the bossHealthUI to the boss script
+            BossHealth bh = undeadKing.GetComponent<BossHealth>();
+            if (bh != null && bossHealthUI != null)
+            {
+                Slider slider = bossHealthUI.GetComponentInChildren<Slider>();
+                bh.healthBarSlider = slider;
+            }
+        }
+        
+        if (bossHealthUI != null)
+        {
+            bossHealthUI.SetActive(true); //show the boss health bar
+        }
+        
+        if (undeadKing != null)
+        {
+            undeadKing.SetActive(true);
         }
         
         BossWalk bossWalkScript = undeadKing.GetComponent<BossWalk>();
@@ -90,6 +111,8 @@ public class PillarInteract : MonoBehaviour
         {
             bossWalkScript.StartWalking();
         }
+        
+        
         gameObject.SetActive(false);
     }
     
