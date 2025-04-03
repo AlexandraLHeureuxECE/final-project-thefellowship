@@ -17092,6 +17092,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathScreenPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 2398889363741935469, guid: 995234d84bc2dc847b56c13e56b40e2b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5555410116519217145, guid: 995234d84bc2dc847b56c13e56b40e2b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
