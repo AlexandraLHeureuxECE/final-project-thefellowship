@@ -8,6 +8,7 @@ public class CharacterCustimizationUI : MonoBehaviour
    [SerializeField] private Button HairButton;
    [SerializeField] private Button BeardButton;
    [SerializeField] private Button SaveButton;
+
    [SerializeField] private Button LoadButton;
    
    [SerializeField] private  PlayerCharacterCustomize playerCharacterCustomize;
