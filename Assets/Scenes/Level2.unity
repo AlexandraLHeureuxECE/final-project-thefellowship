@@ -10715,7 +10715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b575e9768724e8249be8992a171f278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1052862023081061583, guid: 0a4aeb04a265aaf4d83fabfcf385c6b2, type: 3}
+  enemyPrefab: {fileID: 5855764113254542093, guid: 3ab4a2da4cbc7e34788834555731b988, type: 3}
   tag: Spawn2
 --- !u!135 &613060898
 SphereCollider:
@@ -25771,6 +25771,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnLocation: {fileID: 40739274}
+  healthBarSlider: {fileID: 0}
+  healthText: {fileID: 0}
+  deathScreen: {fileID: 0}
 --- !u!1001 &1344783478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26356,7 +26359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b575e9768724e8249be8992a171f278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1052862023081061583, guid: 0a4aeb04a265aaf4d83fabfcf385c6b2, type: 3}
+  enemyPrefab: {fileID: 5855764113254542093, guid: 3ab4a2da4cbc7e34788834555731b988, type: 3}
   tag: Spawn1
 --- !u!1 &1372808599
 GameObject:
@@ -32493,6 +32496,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   reach: 0
+  hitCooldown: 0.5
+  hitCooldownTime: -999
 --- !u!136 &1710033992
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -40605,7 +40610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b575e9768724e8249be8992a171f278e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1052862023081061583, guid: 0a4aeb04a265aaf4d83fabfcf385c6b2, type: 3}
+  enemyPrefab: {fileID: 5855764113254542093, guid: 3ab4a2da4cbc7e34788834555731b988, type: 3}
   tag: Spawn3
 --- !u!135 &2131042661
 SphereCollider:
