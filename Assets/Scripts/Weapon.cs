@@ -10,22 +10,26 @@ public class Weapon : MonoBehaviour {
     
     private HitMarker marker;
     
-    private float hitCooldown = 0.5f;
-    private float hitCooldownTime = -999f;
+    public float hitCooldown = 0.5f;
+    public float hitCooldownTime = -999f;
 
     public void setOwner(GameObject player) {
         this.player = player; // is attached to palyer
         holdTransform = player.transform.Find("Armature").Find("Root_M").Find("Spine1_M").Find("Spine2_M").Find("Chest_M").Find("Scapula_R").Find("Shoulder_R").Find("Elbow_R").Find("Wrist_R").Find("jointItemR");
     }
-
+    
     private void Start()
     {
         marker = FindObjectOfType<HitMarker>();
     }
 
-    void Update() {
-        transform.position = holdTransform.position;
-        transform.rotation = holdTransform.rotation;
+    void Update()
+    {
+        if (holdTransform != null)
+        {
+            transform.position = holdTransform.position;
+            transform.rotation = holdTransform.rotation;
+        }
     }
     
     public virtual void OnTriggerEnter(Collider other)
@@ -56,6 +60,17 @@ public class Weapon : MonoBehaviour {
                 hitCooldownTime = Time.time;
             }
         }
+        
+        if(other.CompareTag("Boss")) // If player is attacking boss
+        {
+            BossHealth health = other.GetComponentInParent<BossHealth>();
+            if (health != null)
+            {
+                health.TakeDamage((int)damage); //Damage the enemy
+                hitCooldownTime = Time.time;
+            }
+        }
+        
     }
     
 }

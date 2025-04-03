@@ -3,7 +3,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     protected int maxHP = 100;
-    private int curHP;
+    protected int curHP;
     
     protected virtual void Start() {
         ResetHealth();
@@ -23,13 +23,13 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void ResetHealth() {
+    public virtual void ResetHealth() {
         curHP = maxHP;
     }
 
     public virtual void TakeDamage(int damage) {
         curHP -= damage;
-        
+        Debug.Log($"{gameObject.name} took {damage} damage. HP: {curHP}");
         if (curHP <= 0) {
             Die();
         }
