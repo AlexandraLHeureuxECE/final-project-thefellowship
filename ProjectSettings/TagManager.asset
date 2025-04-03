@@ -10,6 +10,12 @@ TagManager:
   - WallFade
   - Boss
   - SpawnTrigger
+  - Spawn3
+  - Spawn2
+  - Skull
+  - Spawn4
+  - LavaEnd
+  - LavaSpawn
   layers:
   - Default
   - TransparentFX

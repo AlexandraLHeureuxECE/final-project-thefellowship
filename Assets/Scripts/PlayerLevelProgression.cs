@@ -1,15 +1,11 @@
 ﻿using Progression;
 using UnityEngine;
 using ProgressBar = UnityEngine.UIElements.ProgressBar;
-
-namespace DefaultNamespace
-{
     public class PlayerLevelProgression : MonoBehaviour 
     {
         private int level; 
         private int xp;
         private int xpToNextLevel;
-        private int xpForKill;
         private int xpForLevelComplete;
         private Health health;
         private Armour armour;
@@ -21,7 +17,6 @@ namespace DefaultNamespace
             level = 1;
             xp = 0;
             xpToNextLevel = 100;
-            xpForKill = 10;
             health = GetComponent<Health>();
             armour = GetComponent<Armour>();
         }
@@ -31,7 +26,7 @@ namespace DefaultNamespace
             
         }
         
-        void GainXP(int xp)
+        public void GainXP(int xp)
         {
             this.xp += xp;
             
@@ -45,4 +40,3 @@ namespace DefaultNamespace
             }
         }
     }
-}
