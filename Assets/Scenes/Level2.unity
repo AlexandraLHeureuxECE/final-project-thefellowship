@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7df243f2b69c7b4faa69a150a72833f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSceneName: Mysterious Dungeon
+  newSceneName: Level3
 --- !u!1 &29311665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 118458008299423567, guid: 1211a8a70ccbf8941b4f049e54df814a, type: 3}
