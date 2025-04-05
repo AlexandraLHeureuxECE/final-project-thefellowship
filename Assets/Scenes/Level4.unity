@@ -9823,6 +9823,7 @@ MonoBehaviour:
   healthBarSlider: {fileID: 1918692774}
   healthText: {fileID: 475692072}
   deathScreen: {fileID: 1717463905}
+  maxHPChoice: 450
 --- !u!114 &1124483527
 MonoBehaviour:
   m_ObjectHideFlags: 0
