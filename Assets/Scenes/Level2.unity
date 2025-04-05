@@ -26224,6 +26224,11 @@ MonoBehaviour:
     - {fileID: 4867669987536050029, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
     - {fileID: -2854808510063695659, guid: 10399581d9d41a44bb8984ec628263dd, type: 3}
     SkinnedMeshRenderer: {fileID: 1862866768}
+  availableWeapons:
+  - {fileID: 617454069693408771, guid: 2d901f473ab0f014694c9918464856af, type: 3}
+  - {fileID: 293895842818309675, guid: 9750b4ccd00db7f4ebd2ce03c82ac60a, type: 3}
+  - {fileID: 9111826406044072319, guid: 8e67160923bf133409c0541ad1624d47, type: 3}
+  player: {fileID: 1833771304}
 --- !u!114 &1343742578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36205,6 +36210,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1343742590}
   m_SourcePrefab: {fileID: 100100000, guid: 40f9d55d483d35648a6caca493975c6f, type: 3}
+--- !u!114 &1833771304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5659499248053053074, guid: 40f9d55d483d35648a6caca493975c6f, type: 3}
+  m_PrefabInstance: {fileID: 1833771303}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343742569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5280ddb3092b28479d89240ec3b5a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1834503403
 PrefabInstance:
   m_ObjectHideFlags: 0

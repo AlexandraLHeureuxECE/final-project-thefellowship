@@ -1,13 +1,22 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerCharacterCustomize : MonoBehaviour
 {
     [SerializeField] private BodyPartData[] bodyPartDataArray;
 
+    [Header("Weapon Selection")]
+    [SerializeField] private GameObject[] availableWeapons;
+    [SerializeField] private Player player;
+    [SerializeField] private TextMeshProUGUI weaponInfoText;
+    
     private const string PLAYER_PREFS_SAVE = "PlayerCustimization";
 
+    private int selectedWeaponIndex = 0;
+    
+    
 
     public enum BodyPartType
     {
@@ -57,6 +66,7 @@ public class PlayerCharacterCustomize : MonoBehaviour
     public class SaveObject
     {
         public List<BodyPartTypeIndex> bodyPartTypeIndexList;
+        public int weaponIndex;
     }
 
     public void Save()
@@ -73,16 +83,17 @@ public class PlayerCharacterCustomize : MonoBehaviour
                 bodyPartType = bodyPartType,
                 index = meshIndex
             });
+        }
 
-            SaveObject saveObject = new SaveObject
+        SaveObject saveObject = new SaveObject
             {
-                bodyPartTypeIndexList = bodyPartTypeIndexList
-
+                bodyPartTypeIndexList = bodyPartTypeIndexList,
+                weaponIndex = selectedWeaponIndex
             };
             string Json = JsonUtility.ToJson(saveObject);
             Debug.Log(Json);
             PlayerPrefs.SetString(PLAYER_PREFS_SAVE, Json);
-        }
+        
     }
 
     public void Load()
@@ -95,8 +106,28 @@ public class PlayerCharacterCustomize : MonoBehaviour
             BodyPartData bodyPartData = GetBodyPartData(bodyPartTypeIndex.bodyPartType);
             bodyPartData.SkinnedMeshRenderer.sharedMesh = bodyPartData.meshArray[bodyPartTypeIndex.index];
         }
+        selectedWeaponIndex = saveObject.weaponIndex;
+        EquipSelectedWeapon();
     }
     
+    public void SelectNextWeapon()
+    {
+        selectedWeaponIndex = (selectedWeaponIndex + 1) % availableWeapons.Length;
+        EquipSelectedWeapon();
+    }
+    
+    private void EquipSelectedWeapon()
+    {
+        player.Equip(availableWeapons[selectedWeaponIndex]); //Equips Weapon
+
+        Weapon weaponDesc = availableWeapons[selectedWeaponIndex].GetComponent<Weapon>(); // Updates UI
+        
+        if (weaponDesc != null && weaponInfoText != null)
+        {
+            weaponInfoText.text = $"{weaponDesc.weaponName}\n<color=grey>{weaponDesc.weaponDescription}</color>";
+            Debug.Log("Equipped weapon: " + weaponDesc.weaponName);
+        }
+    }
     
 }
 

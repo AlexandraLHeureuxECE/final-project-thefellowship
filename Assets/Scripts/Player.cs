@@ -88,8 +88,24 @@ public class Player : MonoBehaviour {
     }
 
     // Changes the equipped weapon.
-    void Equip(Weapon weapon) {
-        this.weapon = weapon;
+    public void Equip(GameObject weaponPrefab) { //Updated and usable equip method
+        if (weapon != null)
+        {
+            Destroy(weapon.gameObject);
+        }
+
+        GameObject newWeaponObj = Instantiate(weaponPrefab);
+        Weapon newWeapon = newWeaponObj.GetComponent<Weapon>();
+
+        if (newWeapon != null)
+        {
+            newWeapon.setOwner(gameObject);
+            weapon = newWeapon;
+        }
+        else
+        {
+            Debug.LogWarning("Tried to equip a weapon prefab that doesn't have a Weapon script!");
+        }
     }
 
     // Returns true if the Player is touching the ground (any ground, no tag required), and false otherwise.

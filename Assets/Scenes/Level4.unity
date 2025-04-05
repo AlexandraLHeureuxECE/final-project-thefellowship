@@ -774,6 +774,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1158598552318708043, guid: 40f9d55d483d35648a6caca493975c6f, type: 3}
   m_PrefabInstance: {fileID: 75623233}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &75623235 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5659499248053053074, guid: 40f9d55d483d35648a6caca493975c6f, type: 3}
+  m_PrefabInstance: {fileID: 75623233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124483505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5280ddb3092b28479d89240ec3b5a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &83877391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9839,6 +9850,12 @@ MonoBehaviour:
     - {fileID: 4867669987536050029, guid: de13a7420582ded45a8d7d3f96889aca, type: 3}
     - {fileID: -2854808510063695659, guid: 10399581d9d41a44bb8984ec628263dd, type: 3}
     SkinnedMeshRenderer: {fileID: 1675074796}
+  availableWeapons:
+  - {fileID: 617454069693408771, guid: 2d901f473ab0f014694c9918464856af, type: 3}
+  - {fileID: 293895842818309675, guid: 9750b4ccd00db7f4ebd2ce03c82ac60a, type: 3}
+  - {fileID: 9111826406044072319, guid: 8e67160923bf133409c0541ad1624d47, type: 3}
+  player: {fileID: 75623235}
+  weaponInfoText: {fileID: 0}
 --- !u!114 &1124483513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10637,6 +10654,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   reach: 0
+  weaponName: Unknown
+  weaponDescription: Unknown
   hitCooldown: 0.5
   hitCooldownTime: -999
 --- !u!1 &1196737145 stripped
@@ -17164,11 +17183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2611272790410051028, guid: c8c8b30de2e2b224892a133de2e172a5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 494
+      value: 618
       objectReference: {fileID: 0}
     - target: {fileID: 2611272790410051028, guid: c8c8b30de2e2b224892a133de2e172a5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -395
+      value: -429
       objectReference: {fileID: 0}
     - target: {fileID: 2611272790410051028, guid: c8c8b30de2e2b224892a133de2e172a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -8,6 +8,10 @@ public class Weapon : MonoBehaviour {
     private GameObject player;
     private Transform holdTransform;
     
+    public string weaponName = "Unknown";
+    public string weaponDescription = "Unknown";
+    public AudioClip hitClip;
+    
     private HitMarker marker;
     
     public float hitCooldown = 0.5f;
@@ -44,6 +48,10 @@ public class Weapon : MonoBehaviour {
                 marker.ShowHitMarker();
             }
             
+            if (hitClip != null)
+            {
+                AudioSource.PlayClipAtPoint(hitClip, transform.position);
+            }
             //Knockback enemy
             EnemyFollow _enemyFollow = other.GetComponentInParent<EnemyFollow>();
             if (_enemyFollow != null)
