@@ -96,6 +96,8 @@ public class PlayerCharacterCustomize : MonoBehaviour
             bodyPartData.SkinnedMeshRenderer.sharedMesh = bodyPartData.meshArray[bodyPartTypeIndex.index];
         }
     }
+    
+    
 }
 
 
