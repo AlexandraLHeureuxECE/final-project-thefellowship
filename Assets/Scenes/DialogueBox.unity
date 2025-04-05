@@ -588,11 +588,12 @@ MonoBehaviour:
   - '[UNKOWN]: You are stuck here away from your office problems.'
   - '[UNKOWN]: You have to finish all 5 levels and defeat the final boss to get back
     to your world!'
+  - '[UNKOWN]: You must also go through the blue portals in each level to progress'
   - '[YOU]: ...'
   - '[YOU]: What are you talking about Levels???? '
   - '[YOU]: Like a video game level?'
-  - '[UNKOWN]:You will get a new piece of armour by finishing each level to help
-    you fight the boss.'
+  - '[UNKOWN]:You will get a new piece of armour on each level to help you fight
+    the boss.'
   - '[UNKOWN]: GOOD LUCK. (Vanishes)'
   textSpeed: 0
 --- !u!1660057539 &9223372036854775807
