@@ -15,10 +15,12 @@ public class PlayerHealth : Health {
     
     public GameObject deathScreen;
     private Player playerScript;
+   
+    public int maxHPChoice;
     
     protected override void Start()
     {
-        maxHP = 500;
+        maxHP = maxHPChoice;
         base.Start();
         Debug.Log($"PlayerMaxHealth {maxHP} PLayerCurrentHealth" );
         _animator = GetComponent<Animator>();
