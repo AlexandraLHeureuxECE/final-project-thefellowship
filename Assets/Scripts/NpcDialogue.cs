@@ -8,9 +8,11 @@ public class NpcDialogue : MonoBehaviour
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
+    
 
     private int index;
     private bool dialogueStarted = false;
+    [SerializeField] private ArmorManager armorManager; // Assign in inspector
 
     void Start()
     {
@@ -64,7 +66,13 @@ public class NpcDialogue : MonoBehaviour
         {
             // Replace with your scene name or build index
             SceneManager.LoadScene(8);
+         
+            
             
         }
     }
+    
+   
+    
+  
 }
