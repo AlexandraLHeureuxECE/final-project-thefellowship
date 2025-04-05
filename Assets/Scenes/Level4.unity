@@ -9540,6 +9540,7 @@ MonoBehaviour:
   healthBarSlider: {fileID: 1603976375701645817, guid: c8c8b30de2e2b224892a133de2e172a5, type: 3}
   healthText: {fileID: 0}
   deathScreen: {fileID: 2398889363741935469, guid: 995234d84bc2dc847b56c13e56b40e2b, type: 3}
+  maxHPChoice: 450
 --- !u!114 &1124483521
 MonoBehaviour:
   m_ObjectHideFlags: 0
