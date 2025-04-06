@@ -43,7 +43,7 @@ public class LavaSpawn : MonoBehaviour
 
             // Instantiate a new lava at the spawn point
             Instantiate(lavaPrefab, spawnPoint.transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(3f);
         }
 
         // After the loop ends, reset the spawn logic

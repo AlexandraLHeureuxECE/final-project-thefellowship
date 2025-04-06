@@ -7,7 +7,7 @@ namespace Level4Scripts
     {
         Vector3 lavaPos;
 
-        float lavaSpeed = 2f;
+        float lavaSpeed = 3f;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
