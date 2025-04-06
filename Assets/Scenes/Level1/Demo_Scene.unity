@@ -25783,6 +25783,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   reach: 0
+  weaponName: Unknown
+  weaponDescription: Unknown
+  hitClip: {fileID: 0}
   hitCooldown: 0.5
   hitCooldownTime: -999
 --- !u!136 &1041762766
@@ -38695,6 +38698,7 @@ MonoBehaviour:
   - {fileID: 293895842818309675, guid: 9750b4ccd00db7f4ebd2ce03c82ac60a, type: 3}
   - {fileID: 9111826406044072319, guid: 8e67160923bf133409c0541ad1624d47, type: 3}
   player: {fileID: 1531747533}
+  weaponInfoText: {fileID: 0}
 --- !u!114 &1531747523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43145,11 +43149,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2611272790410051028, guid: c8c8b30de2e2b224892a133de2e172a5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 681
+      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 2611272790410051028, guid: c8c8b30de2e2b224892a133de2e172a5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -433
+      value: -160
       objectReference: {fileID: 0}
     - target: {fileID: 2611272790410051028, guid: c8c8b30de2e2b224892a133de2e172a5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
