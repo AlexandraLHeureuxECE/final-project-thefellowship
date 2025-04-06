@@ -22,7 +22,7 @@ namespace Progression
             {
                 if (other.CompareTag("Player") && canSpawn) 
                 {
-                    _progressBar.IncrementProgress(0.25f); // Increments 
+                    _progressBar.IncrementProgress(0.35f); // Increments 
                     pdatexp();
                 }
 
@@ -34,7 +34,7 @@ namespace Progression
         {
             if (_progressBar != null)
             {
-                _progressBar.IncrementProgress(0.25f); // Increments by 10%
+                _progressBar.IncrementProgress(0.35f); // Change this as well!!! Increments             
             }
         }
         
