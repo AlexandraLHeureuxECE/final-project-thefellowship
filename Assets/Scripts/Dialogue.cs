@@ -73,6 +73,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             // Replace with your scene name or build index
             SceneManager.LoadScene(3);
+            
         }
     }
 }
