@@ -184,6 +184,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 25
   reach: 0
+  weaponName: Unknown
+  weaponDescription: Unknown
+  hitClip: {fileID: 0}
+  hitCooldown: 0.5
+  hitCooldownTime: -999
 --- !u!1 &418639935932606983
 GameObject:
   m_ObjectHideFlags: 0
